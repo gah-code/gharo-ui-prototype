@@ -1,6 +1,6 @@
 # gharo-ui-prototype
 
-Single-page personal Web engineering site prototype built with a **UI-first, CMS-second** approach.
+Single-page personal Web site prototype built with a **UI-first, CMS-second** approach.
 
 Web engineering - Interface, Content Managment, and Publish Operations.
 

@@ -13,9 +13,4 @@
   # Optional config (you can tweak these later)
   [plugins.inputs]
     output_path = "lighthouse-report.html"
-    # Scores are 0–1 here
-    thresholds_performance = 0.9
-    thresholds_accessibility = 0.95
-    thresholds_best_practices = 0.95
-    thresholds_seo = 0.95
-    # Leave PWA out for now since you're not shipping a PWA
+    

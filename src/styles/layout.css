@@ -55,7 +55,13 @@ body {
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
+}
+
+/* On dark backgrounds, you can also add a light box-shadow for extra pop */
+a:focus-visible,
+button:focus-visible {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.7);
 }
 
 /* Header */

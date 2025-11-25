@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,md}\"",
-    "agent:build": "node agent/scripts/buildCheckpointPayload.mjs"
+    "agent:build": "node agent/scripts/buildCheckpointPayload.mjs",
+    "agent:cp2": "node agent/scripts/runCheckpoint2.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

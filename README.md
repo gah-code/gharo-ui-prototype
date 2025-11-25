@@ -94,3 +94,21 @@ gharo-ui-prototype/
       sections/            # optional section-specific styles
 
 This structure will evolve, but this is the v0.1.0 baseline.
+
+```
+
+---
+
+## Agent-Aware Checklist – UI Prototype First, CMS Second
+
+## Phase 0 – Setup (Repo + Agent Skeleton)
+
+## Phase 1 – Static Data Shape
+
+## Phase 2 – Layout & Structure (Local Only)
+
+## Phase 3 – Visual Design & Tokens
+
+## Phase 4 – UX Polish (Still Static)
+
+## Phase 5 – Translate UI Shape into Contentful Model

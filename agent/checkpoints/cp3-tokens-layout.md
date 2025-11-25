@@ -1,3 +1,63 @@
+
+> gharo-ui-prototype@0.0.0 agent:build
+> node agent/scripts/buildCheckpointPayload.mjs Tokens + Layout CSS Review Global design tokens and base layout/styles for the personal single-page app, including header, hero, timeline, and section spacing. src/styles/tokens.css src/styles/layout.css
+
+# Agent Checkpoint: Tokens + Layout CSS Review
+
+## Context
+
+Global design tokens and base layout/styles for the personal single-page app, including header, hero, timeline, and section spacing.
+
+## Artifacts
+
+### File: src/styles/tokens.css
+
+```css
+:root {
+  /* Colors */
+  --color-bg: #050816;
+  --color-surface: #0b1020;
+  --color-accent: #3dd6b8;
+  --color-accent-soft: #1d3640;
+  --color-text: #f5f5f7;
+  --color-muted: #a0a3b1;
+  --color-border: #23263a;
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-pill: 999px;
+
+  /* Shadow */
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+```
+
+### File: src/styles/layout.css
+
+```css
 *,
 *::before,
 *::after {
@@ -12,12 +72,6 @@ body,
   height: 100%;
 }
 
-/* Smooth in-page scrolling and padding for sticky header */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 4.5rem;
-}
-
 body {
   font-family: var(--font-sans);
   background: radial-gradient(circle at top, #10152c 0, var(--color-bg) 45%);
@@ -27,35 +81,6 @@ body {
 
 .page {
   min-height: 100vh;
-}
-
-/* --- Skip link --- */
-
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: 0;
-  padding: var(--space-2) var(--space-4);
-  background: var(--color-accent);
-  color: #050816;
-  border-radius: var(--radius-pill);
-  z-index: 20;
-  text-decoration: none;
-  font-size: var(--font-size-sm);
-}
-
-.skip-link:focus,
-.skip-link:focus-visible {
-  left: var(--space-4);
-  top: var(--space-4);
-}
-
-/* --- Global focus styles --- */
-
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
 }
 
 /* Header */
@@ -113,8 +138,6 @@ button:focus-visible {
   max-width: 960px;
   margin: 0 auto;
   padding: var(--space-12) var(--space-4);
-  /* Avoid header covering anchor destinations */
-  scroll-margin-top: 5rem;
 }
 
 .section + .section {
@@ -427,3 +450,12 @@ button:focus-visible {
     font-size: var(--font-size-base);
   }
 }
+
+```
+
+## Questions
+
+- [ ]1. Are these tokens (colors, type scale, spacing) structured so I can extend or theme later without a full rewrite?
+- [ ]2. Does the section spacing and typography scale make sense for a content-heavy, scrollable single page?
+- [ ] 3. Any obvious a11y issues (contrast, font sizes) or layout pitfalls on small screens that I should fix early?
+- [ ]4. Would you reorganize any of the CSS to better separate “tokens”, “layout primitives”, and “component styles”?

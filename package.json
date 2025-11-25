@@ -13,6 +13,7 @@
     "agent:cp2": "node agent/scripts/runCheckpoint2.mjs"
   },
   "dependencies": {
+    "contentful": "^11.9.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

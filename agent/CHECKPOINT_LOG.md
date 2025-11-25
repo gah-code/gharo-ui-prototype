@@ -43,3 +43,12 @@ Running log of agent-assisted reviews for `gharo-ui-prototype`.
   - Adjusted focus styles and/or contrast where needed.
   - Confirmed scroll behavior with sticky header and anchor links using `scroll-margin-top`.
   - Tightened mobile spacing / wrapping for the nav on small screens.
+
+## Checkpoint 7 – Contentful Integration & Mapping Review
+
+- Date: 2025-11-24
+- Summary:
+  - Hardened CMS → TS mapping with a section mapper registry and safe array helpers.
+  - Unknown section types now warn and are skipped instead of breaking the page.
+  - Mapping layer remains layout-agnostic; UI continues to consume typed data only.
+  - `npm run lint` passes.

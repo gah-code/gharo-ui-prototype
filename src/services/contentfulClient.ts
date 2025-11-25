@@ -3,7 +3,7 @@ import { createClient } from 'contentful';
 
 const space = import.meta.env.VITE_CONTENTFUL_SPACE_ID;
 const accessToken = import.meta.env.VITE_CONTENTFUL_DELIVERY_TOKEN;
-const environment = import.meta.env.VITE_CONTENTFUL_ENVIRONMENT || 'dev';
+const environment = import.meta.env.VITE_CONTENTFUL_ENVIRONMENT || 'master';
 
 if (!space || !accessToken) {
   // Fail early in dev if env vars are missing

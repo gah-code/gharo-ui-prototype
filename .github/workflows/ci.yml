@@ -8,6 +8,10 @@ on:
 jobs:
   build-and-lint:
     runs-on: ubuntu-latest
+    env:
+      VITE_CONTENTFUL_SPACE_ID: ${{ secrets.VITE_CONTENTFUL_SPACE_ID }}
+      VITE_CONTENTFUL_DELIVERY_TOKEN: ${{ secrets.VITE_CONTENTFUL_DELIVERY_TOKEN }}
+      VITE_CONTENTFUL_ENVIRONMENT: ${{ secrets.VITE_CONTENTFUL_ENVIRONMENT || 'master' }}
 
     steps:
       - name: Checkout

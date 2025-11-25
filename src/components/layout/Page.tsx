@@ -37,7 +37,10 @@ import { useEffect, useState } from 'react';
 import type { PersonalLandingPage } from '../../data/page-personal-landing';
 import { personalLandingPage as fallbackPage } from '../../data/page-personal-landing';
 import { SectionRenderer } from '../sections/SectionRenderer';
+import { PersonSchema } from '../PersonSchema';
+
 import { Seo } from '../Seo';
+
 import { fetchPersonalLandingPage } from '../../services/fetchPersonalLandingPage';
 
 export function Page() {
@@ -81,6 +84,8 @@ export function Page() {
   return (
     <div className="page" id="top">
       <Seo title={page.meta.title} description={page.meta.description} />
+      <PersonSchema />
+
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
@@ -90,7 +95,7 @@ export function Page() {
           <a href="#top" className="logo" aria-label="Back to top">
             GH
           </a>
-          <nav className="page-nav" aria-label="Primary">
+          <nav className="page-nav" aria-label="Primary navigation">
             <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>

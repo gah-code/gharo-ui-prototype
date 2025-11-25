@@ -11,7 +11,7 @@ import type {
 } from '../data/page-personal-landing';
 import { contentfulClient } from './contentfulClient';
 
-type AnyEntry = {
+export type AnyEntry = {
   sys: {
     id: string;
     contentType: { sys: { id: string } };
@@ -26,10 +26,7 @@ interface PagePersonalLandingFields {
   sections?: AnyEntry[];
 }
 
-const SECTION_MAPPERS: Record<
-  string,
-  ((entry: AnyEntry) => PageSection | null) | undefined
-> = {
+const SECTION_MAPPERS: Record<string, ((entry: AnyEntry) => PageSection) | undefined> = {
   sectionHero: mapHeroSection,
   sectionTimeline: mapTimelineSection,
   sectionSkills: mapSkillsSection,
@@ -70,16 +67,16 @@ export async function fetchPersonalLandingPage(): Promise<PersonalLandingPage> {
 
 // ---- Section mappers ----
 
-function mapSectionFromEntry(entry: AnyEntry): PageSection {
+export function mapSectionFromEntry(entry: AnyEntry): PageSection | null {
   const typeId = entry.sys.contentType.sys.id;
   const mapper = SECTION_MAPPERS[typeId];
 
   if (!mapper) {
     console.warn('[mapSectionFromEntry] Unsupported section type', typeId);
-    return null as unknown as PageSection;
+    return null;
   }
 
-  return mapper(entry) as PageSection;
+  return mapper(entry);
 }
 
 // HERO
